@@ -13,12 +13,14 @@ fn main() {
     io::stdin()
         .read_line(&mut amount)
         .expect("Failed to read input");
+    
+    let amount: u64 = amount.trim().parse().expect("Please type a number"); 
 
     fn add_money(amount: u64, balance: u64) -> u64 {
         balance + amount
     }
 
-    balance = add_money(300, balance);
+    balance = add_money(amount, balance);
 
     println!("Available balance is: {balance}");
 }
